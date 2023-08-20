@@ -1,0 +1,33 @@
+version: '3.4'
+
+networks:
+  webapiwithdocker:
+
+
+services:
+  webapidb:
+    container_name: app-db
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+      - 1433:1433
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=1234567890@Aa
+    networks:
+      - webapiwithdocker
+  webapi_play_with_docker:
+    container_name: webapi-with-docker
+    image: ${DOCKER_REGISTRY-}webapiplaywithdocker
+    build:
+      context: .
+      dockerfile: WebApi_Play_With_Docker/Dockerfile
+    ports:
+      - 8001:80
+    depends_on:
+      - webapidb
+    environment:
+      - DB_HOST=webapidb
+      - DB_NAME=DemoWebApiWithDockerDb
+      - DB_SA_PASSWORD=1234567890@Aa
+    networks:
+      - webapiwithdocker

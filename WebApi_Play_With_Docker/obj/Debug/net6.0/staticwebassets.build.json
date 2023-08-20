@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "7W2SE6k/OHboA2U9DK80k1O8zTo7QJHCwdHtEcLmSsw=",
+  "Source": "WebApi_Play_With_Docker",
+  "BasePath": "_content/WebApi_Play_With_Docker",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

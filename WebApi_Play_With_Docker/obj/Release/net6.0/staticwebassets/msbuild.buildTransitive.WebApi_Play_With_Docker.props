@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\WebApi_Play_With_Docker.props" />
+</Project>
